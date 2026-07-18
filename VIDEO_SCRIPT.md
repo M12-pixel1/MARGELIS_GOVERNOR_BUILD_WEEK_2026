@@ -8,7 +8,7 @@ The abstract visual contains no synthetic person. The live Human Gate action is 
 
 ## 0:00–0:12 — Problem and thesis
 
-“AI agents can draft and propose real actions, but a useful operational system also needs a decision boundary and evidence. Margelis Governor demonstrates one complete loop: draft, gate, correct, sign, learn, and prove.”
+“AI agents can propose real actions. Margelis Governor adds a decision boundary and evidence: draft, gate, correct, sign, learn, and prove.”
 
 Show the live URL and the six stages. Point to **Synthetic data only** and the message that no email is sent.
 
@@ -16,13 +16,13 @@ Show the live URL and the six stages. Point to **Synthetic data only** and the m
 
 Select **Start governed draft**.
 
-“GPT‑5.6 Terra is the governed drafting agent. It receives a fixed synthetic campaign brief and produces this proposed outreach email. The action is classified as R3 because it is an external communication.”
+“GPT‑5.6 Terra is the governed drafting agent. It proposes a synthetic outreach email. Because this is an external communication, deterministic policy classifies it as R3.”
 
 Point to the model/mode label, R3, and the proposed-not-sent status.
 
 ## 0:38–1:00 — Claim Guard stop
 
-“The campaign brief contains an unsupported numerical and universal statement. Deterministic Claim Guard rules detect it and stop the action. A model advisory may add context, but it cannot remove this block.”
+“The draft contains unsupported numerical and universal claims. Deterministic Claim Guard rules stop the action. GPT‑5.6 may add advisory context, but cannot remove the block.”
 
 Show the finding, rule identifier, excerpt, and STOP status.
 
@@ -30,7 +30,7 @@ Show the finding, rule identifier, excerpt, and STOP status.
 
 In the prefilled draft, manually replace the blocked sentence with: **“The pilot will measure whether the workflow reduces repetitive follow-up.”** Then select **Approve + sign**.
 
-“I correct the unsupported statement myself. Human Gate runs Claim Guard again and refuses unchanged or still-blocked text. Only the corrected artifact is approved. Every stage is written to a hash chain and signed with a local Ed25519 demo key.”
+“I replace the unsupported statement myself. Human Gate rejects unchanged or still-blocked text. The corrected artifact is added to a hash chain and signed with a local Ed25519 demo key.”
 
 Select **Verify chain**.
 
@@ -38,13 +38,13 @@ Select **Verify chain**.
 
 Select **Run tamper check**.
 
-“An edited copy fails verification while the stored ledger remains unchanged.”
+“An edited copy fails while the stored ledger remains unchanged.”
 
 ## 1:35–2:08 — Correction-to-eval regression
 
 Select **Compile eval + rerun agent**.
 
-“Exam Runner converts the human correction into a structured eval and bounded correction example. It does not retrain the model. The original artifact fails the generated eval. A fresh GPT‑5.6 draft is produced with the correction context, Claim Guard evaluates the actual output, and all baseline cases run again.”
+“Exam Runner converts the correction into a structured eval and bounded context; it does not retrain the model. The original fails, a fresh GPT‑5.6 draft passes, and all baseline cases remain green.”
 
 Point to **FAIL → PASS → GREEN**, then show the actual rerun artifact and event trail.
 
@@ -52,7 +52,7 @@ Point to **FAIL → PASS → GREEN**, then show the actual rerun artifact and ev
 
 Show the primary Codex build thread or test output for 2–3 seconds. Do not show API keys or other secrets.
 
-“I built this project in Codex from a written Build Week specification with hard isolation rules and a definition of done. Codex implemented the flow engine, deterministic Claim Guard, Ed25519 evidence ledger, Exam Runner, web interface, tests, and Docker deployment. It repeatedly tested and repaired the implementation until twenty-two tests passed. Two constraints shaped the result: deterministic rules own blocking decisions, while GPT‑5.6 can only add advisory context; and every governance component was re-implemented inside this isolated repository without touching any production Margelis system.”
+“I built this in Codex from a written specification, hard isolation rules, and a definition of done. Codex implemented the flow engine, deterministic Claim Guard, signed ledger, Exam Runner, web interface, tests, and Docker deployment, then tested and repaired the implementation until twenty-two tests passed. Blocking remains deterministic, GPT‑5.6 is advisory at the gate, and no production Margelis system was touched.”
 
 ## 2:38–2:50 — Close
 
