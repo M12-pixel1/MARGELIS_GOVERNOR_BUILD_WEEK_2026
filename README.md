@@ -57,6 +57,13 @@ Open `http://127.0.0.1:8000`.
 
 The default is **fixture mode**. It is deterministic, requires no network or API key, and is clearly identified in the interface. It exists for reproducible testing and does not represent a live model call.
 
+### Supported platforms
+
+- **Hosted demo:** current desktop or mobile browser at the HTTPS URL below.
+- **Primary reproducible deployment:** Docker on a Linux host using the included `Dockerfile`.
+- **Local development:** Python 3.11+ on Linux, macOS, or WSL2. The automated clean-clone and test runs were executed on Linux.
+- **Windows without WSL:** use Docker Desktop. A native Windows Python run is not part of the verified Build Week test matrix.
+
 ### Live GPT‑5.6 mode
 
 Copy `.env.example` to `.env`, keep it untracked, and set:
@@ -116,7 +123,8 @@ The suite covers:
 ## GPT‑5.6 and Codex usage
 
 - **GPT‑5.6 Terra** is the governed drafting agent and optional claim-review advisory. It does not make the final risk or approval decision.
-- **Codex** implemented and iterated on this repository from the Build Week specification, ran the test/repair loop, and prepared the interface, clean-run instructions, and submission materials.
+- **Codex** received the written Build Week specification, implemented the flow engine, Claim Guard, Ed25519 evidence ledger, Exam Runner, web interface, test suite, and Docker deployment, then ran iterative test-and-repair loops until all 22 tests passed.
+- The implementation kept two specification decisions explicit: deterministic rules own blocking outcomes while the GPT‑5.6 advisory can only add context, and every governance component was re-implemented inside this isolated repository rather than copied from or connected to a production Margelis system.
 - Deterministic code owns action classification, blocking decisions, signature verification, and eval assertions.
 - The model is never asked to generate executable tests. Exam Runner stores structured JSON-compatible eval data and uses fixed evaluators.
 
