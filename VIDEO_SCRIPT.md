@@ -28,7 +28,7 @@ Show the finding, rule identifier, excerpt, and STOP status.
 
 ## 1:00–1:35 — Human correction and signed evidence
 
-In the prefilled draft, manually replace the blocked sentence with: **“The pilot will measure whether the workflow reduces repetitive follow-up.”** Then select **Approve + sign**.
+Briefly point to the disabled **Approve + sign** button while the draft is unchanged. Change only `95%` to `84%`, select **Approve + sign**, and show the still-blocked rejection. Then replace the full blocked sentence with: **“The pilot will measure whether the workflow reduces repetitive follow-up.”** Select **Approve + sign** again.
 
 “I replace the unsupported statement myself. Human Gate rejects unchanged or still-blocked text. The corrected artifact is added to a hash chain and signed with a local Ed25519 demo key.”
 
