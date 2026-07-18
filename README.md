@@ -129,7 +129,9 @@ The suite covers:
 
 The included `Dockerfile` and `Procfile` support a single server deployment. Configure `MARGELIS_AGENT_MODE=live` and the OpenAI key as host-managed server secrets. The public demo must use a durable HTTPS URL; static-only hosting and browser-entered API keys are outside this design.
 
-**Hosted URL:** pending approved host and server-side secret configuration.
+**Hosted URL:** https://margelis-governor-build-week-2026.onrender.com/
+
+The hosted service was verified in live GPT-5.6 mode on 2026-07-18: the R3 draft was blocked, corrected and signed, the generated correction eval failed on the original draft and passed on the fresh rerun, all prior evals remained green, and the tamper check rejected an edited record.
 
 ## Assumptions log
 
