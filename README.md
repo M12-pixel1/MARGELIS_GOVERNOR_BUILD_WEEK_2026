@@ -1,5 +1,7 @@
 # Margelis Governor — Build Week 2026
 
+![Abstract visualization of the governed operation flow](assets/margelis-governor-build-week-visual.png)
+
 **AI agent operations with human approval, cryptographic evidence, and a correction-to-eval regression loop.**
 
 This repository is an isolated, self-contained demonstration. A GPT‑5.6 sales drafting action is classified as R3, stopped when deterministic controls find an unsupported marketing statement, corrected by a human, recorded in an Ed25519-signed Evidence Passport, and converted into a structured eval for a fresh agent rerun.
@@ -29,7 +31,8 @@ All implementation in this repository was created during the 2026 submission per
 - Human Gate that rejects unchanged or still-blocked copy;
 - Ed25519 signer, canonical records, per-flow hash chain, verifier, and tamper demonstration;
 - correction compiler, generated eval, actual rerun, and baseline regression suite;
-- responsive single-page demonstration interface;
+- responsive single-page demonstration interface with a manual Human Gate edit;
+- original AI-generated abstract visual for the video intro and thumbnail, with provenance documented under `assets/`;
 - network-free tests, repository hygiene checks, container packaging, and submission materials.
 
 ## Prior Margelis concepts reused
@@ -143,6 +146,7 @@ The hosted service was verified in live GPT-5.6 mode on 2026-07-18: the R3 draft
 6. The correction becomes an eval and bounded prompt example; it is not model retraining.
 7. Fixture mode proves deterministic mechanics. The hosted Build Week experience must use live mode to demonstrate GPT‑5.6.
 8. No proposed external message is transmitted by this repository.
+9. The interface preloads the blocked artifact for review but provides no automatic correction; the human must make a material text edit before approval is enabled.
 
 ## Repository status
 

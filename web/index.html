@@ -89,13 +89,13 @@
           </header>
           <label for="actorInput">Reviewer identifier</label>
           <input id="actorInput" value="Tomas — demo human gate" autocomplete="off" />
-          <label for="correctionText">Corrected draft</label>
+          <label for="correctionText">Human-edited draft</label>
           <textarea id="correctionText" rows="10" disabled></textarea>
+          <p class="field-hint">Edit the blocked statement directly. This demo does not auto-repair the draft.</p>
           <div class="action-row">
-            <button id="safeEditButton" class="button button-secondary" disabled>Apply suggested correction</button>
             <button id="approveButton" class="button button-primary" disabled>Approve + sign</button>
           </div>
-          <p id="humanMessage" class="inline-message muted">The unsafe draft must be corrected before signing.</p>
+          <p id="humanMessage" class="inline-message muted">Edit the blocked statement yourself. Unchanged text cannot be approved.</p>
         </article>
 
         <article class="panel stage-card" data-stage="evidence">
@@ -146,4 +146,3 @@
     <script src="/app.js" defer></script>
   </body>
 </html>
-

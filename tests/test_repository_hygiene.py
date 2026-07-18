@@ -43,3 +43,13 @@ def test_repository_contains_no_obvious_secret_or_private_key_material() -> None
         text = path.read_text(encoding="utf-8", errors="ignore")
         assert secret_prefix not in text
         assert private_marker not in text
+
+
+def test_interface_requires_a_manual_human_edit() -> None:
+    html = (ROOT / "web" / "index.html").read_text(encoding="utf-8")
+    javascript = (ROOT / "web" / "app.js").read_text(encoding="utf-8")
+    assert "safeEditButton" not in html
+    assert "safeEditButton" not in javascript
+    assert "suggestedCorrection" not in javascript
+    assert 'correction !== original' in javascript
+    assert "This demo does not auto-repair the draft." in html

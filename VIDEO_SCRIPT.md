@@ -1,7 +1,10 @@
 # Demo video script — target 2:35
 
 Language: English  
-Format: screen recording with voice, no background music
+Format: AI-generated intro still followed by a live screen recording with AI-assisted or human voice, no background music  
+Intro/thumbnail asset: `assets/margelis-governor-build-week-visual.png`
+
+The abstract visual contains no synthetic person. The live Human Gate action is performed by Tomas on screen.
 
 ## 0:00–0:18 — Problem and thesis
 
@@ -25,9 +28,9 @@ Show the finding, rule identifier, excerpt, and STOP status.
 
 ## 1:12–1:40 — Human correction and signed evidence
 
-Select **Apply suggested correction**, inspect the text, then select **Approve + sign**.
+In the prefilled draft, manually replace the blocked sentence with: **“The pilot will measure whether the workflow reduces repetitive follow-up.”** Then select **Approve + sign**.
 
-“The human corrects the artifact. Human Gate runs Claim Guard again and refuses unchanged or still-blocked text. Only the corrected artifact is approved. Every stage is written to a hash chain and signed with a local Ed25519 demo key.”
+“I correct the unsupported statement myself. Human Gate runs Claim Guard again and refuses unchanged or still-blocked text. Only the corrected artifact is approved. Every stage is written to a hash chain and signed with a local Ed25519 demo key.”
 
 Select **Verify chain**.
 

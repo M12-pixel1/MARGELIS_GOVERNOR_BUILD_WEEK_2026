@@ -27,13 +27,16 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
-function suggestedCorrection(flow) {
-  let text = flow.draft.text;
-  const replacement = "Nimbus Ledger is designed to streamline onboarding workflows.";
-  for (const finding of flow.claim_review.findings) {
-    if (finding.severity === "block") text = text.replace(finding.excerpt, replacement);
-  }
-  return text;
+function updateApprovalState() {
+  if (!state.flow || state.flow.stage !== "BLOCKED") return;
+  const correction = byId("correctionText").value.trim();
+  const original = state.flow.draft.text.trim();
+  const changed = correction.length > 0 && correction !== original;
+  byId("approveButton").disabled = !changed;
+  byId("humanMessage").textContent = changed
+    ? "Human edit detected. Approval will run Claim Guard again before signing."
+    : "Edit the blocked statement yourself. Unchanged text cannot be approved.";
+  byId("humanMessage").className = `inline-message ${changed ? "message-good" : "muted"}`;
 }
 
 function renderFlow(flow) {
@@ -62,16 +65,14 @@ function renderFlow(flow) {
 
   if (flow.stage === "BLOCKED") {
     byId("correctionText").disabled = false;
-    byId("correctionText").value ||= suggestedCorrection(flow);
-    byId("safeEditButton").disabled = false;
-    byId("approveButton").disabled = false;
+    byId("correctionText").value ||= flow.draft.text;
+    updateApprovalState();
     setState("humanState", "Action needed", "warn");
   }
 
   if (["SIGNED", "REGRESSION_PASSED", "REGRESSION_FAILED"].includes(flow.stage)) {
     byId("correctionText").value = flow.corrected_text;
     byId("correctionText").disabled = true;
-    byId("safeEditButton").disabled = true;
     byId("approveButton").disabled = true;
     byId("rerunButton").disabled = false;
     byId("verifyButton").disabled = false;
@@ -214,12 +215,9 @@ async function initialize() {
 }
 
 byId("startButton").addEventListener("click", startFlow);
-byId("safeEditButton").addEventListener("click", () => {
-  if (state.flow) byId("correctionText").value = suggestedCorrection(state.flow);
-});
+byId("correctionText").addEventListener("input", updateApprovalState);
 byId("approveButton").addEventListener("click", approveFlow);
 byId("rerunButton").addEventListener("click", rerunFlow);
 byId("verifyButton").addEventListener("click", verifyFlow);
 byId("tamperButton").addEventListener("click", tamperFlow);
 initialize();
-
