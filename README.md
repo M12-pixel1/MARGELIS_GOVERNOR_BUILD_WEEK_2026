@@ -4,6 +4,11 @@
 
 **AI agent operations with human approval, cryptographic evidence, and a correction-to-eval regression loop.**
 
+**Live GPT‑5.6 demo:** https://margelis-governor-build-week-2026.onrender.com/  
+The hosted path runs GPT‑5.6 Terra in `live` mode; the clean-clone default is the deterministic fixture used for reproducible tests.
+
+**Free-host wake-up:** Render may spin this service down after 15 minutes without inbound traffic. The next request can take about one minute while it starts again, so open the live URL before recording or judging. See [Render's Free instance documentation](https://render.com/docs/free#spinning-down-on-idle).
+
 This repository is an isolated, self-contained demonstration. A GPT‑5.6 sales drafting action is classified as R3, stopped when deterministic controls find an unsupported marketing statement, corrected by a human, recorded in an Ed25519-signed Evidence Passport, and converted into a structured eval for a fresh agent rerun.
 
 The demo does not send email, connect to production Margelis services, or use customer data.
