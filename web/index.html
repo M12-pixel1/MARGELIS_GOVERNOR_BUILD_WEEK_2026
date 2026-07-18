@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A synthetic demonstration of human-gated agent operations, signed evidence, and correction-to-eval regression."
+    />
+    <title>Margelis Governor — Verified Agent Operations Demo</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Margelis Governor home">
+        <span class="brand-mark">MG</span>
+        <span>
+          <strong>Margelis Governor</strong>
+          <small>Build Week 2026 demo</small>
+        </span>
+      </a>
+      <div class="status-cluster">
+        <span id="modeBadge" class="badge badge-neutral">Checking mode…</span>
+        <span class="badge badge-safe">Synthetic data only</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">DRAFT → GATE → CORRECT → SIGN → LEARN → PROVE</p>
+          <h1>Agent operations that leave evidence.</h1>
+          <p class="hero-copy">
+            Watch a governed GPT‑5.6 drafting action meet a deterministic risk gate,
+            human correction, signed evidence, and a reproducible regression check.
+          </p>
+        </div>
+        <aside class="hero-note">
+          <strong>This demo never sends email.</strong>
+          <span>It proposes a synthetic external action and stops at a local approval artifact.</span>
+        </aside>
+      </section>
+
+      <section class="control-strip panel">
+        <div>
+          <span class="step-kicker">Demo control</span>
+          <h2>One flow. Six observable stages.</h2>
+        </div>
+        <button id="startButton" class="button button-primary">Start governed draft</button>
+      </section>
+
+      <section class="flow-grid" aria-live="polite">
+        <article class="panel stage-card" data-stage="draft">
+          <header>
+            <span class="stage-number">01</span>
+            <div><span class="step-kicker">Governed agent</span><h2>Draft</h2></div>
+            <span id="draftState" class="state">Waiting</span>
+          </header>
+          <div id="draftMeta" class="meta-row"></div>
+          <pre id="draftText" class="artifact muted">Start the demo to generate the synthetic outreach draft.</pre>
+        </article>
+
+        <article class="panel stage-card" data-stage="gate">
+          <header>
+            <span class="stage-number">02</span>
+            <div><span class="step-kicker">Deterministic controls</span><h2>Risk + Claim Gate</h2></div>
+            <span id="gateState" class="state">Waiting</span>
+          </header>
+          <div class="two-column">
+            <div class="metric-box">
+              <span>Risk class</span>
+              <strong id="riskClass">—</strong>
+              <small id="riskDisposition">No decision yet</small>
+            </div>
+            <div>
+              <span class="label">Blocking findings</span>
+              <div id="findings" class="finding-list muted">No review yet.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel stage-card" data-stage="human">
+          <header>
+            <span class="stage-number">03</span>
+            <div><span class="step-kicker">Human Gate</span><h2>Correct + approve</h2></div>
+            <span id="humanState" class="state">Waiting</span>
+          </header>
+          <label for="actorInput">Reviewer identifier</label>
+          <input id="actorInput" value="Tomas — demo human gate" autocomplete="off" />
+          <label for="correctionText">Corrected draft</label>
+          <textarea id="correctionText" rows="10" disabled></textarea>
+          <div class="action-row">
+            <button id="safeEditButton" class="button button-secondary" disabled>Apply suggested correction</button>
+            <button id="approveButton" class="button button-primary" disabled>Approve + sign</button>
+          </div>
+          <p id="humanMessage" class="inline-message muted">The unsafe draft must be corrected before signing.</p>
+        </article>
+
+        <article class="panel stage-card" data-stage="evidence">
+          <header>
+            <span class="stage-number">04</span>
+            <div><span class="step-kicker">Evidence Passport</span><h2>Signed chain</h2></div>
+            <span id="evidenceState" class="state">Waiting</span>
+          </header>
+          <div id="evidenceSummary" class="evidence-summary muted">No signed approval yet.</div>
+          <div class="action-row">
+            <button id="verifyButton" class="button button-secondary" disabled>Verify chain</button>
+            <button id="tamperButton" class="button button-quiet" disabled>Run tamper check</button>
+          </div>
+          <div id="verificationResult" class="inline-message muted"></div>
+        </article>
+
+        <article class="panel stage-card stage-wide" data-stage="exam">
+          <header>
+            <span class="stage-number">05</span>
+            <div><span class="step-kicker">Exam Runner</span><h2>Correction → eval → regression</h2></div>
+            <span id="examState" class="state">Waiting</span>
+          </header>
+          <p class="section-copy">
+            The human correction becomes a structured eval and a bounded correction example for a new draft.
+            Model weights do not change.
+          </p>
+          <button id="rerunButton" class="button button-primary" disabled>Compile eval + rerun agent</button>
+          <div id="regressionView" class="regression-grid muted">
+            Sign the corrected draft to unlock the regression run.
+          </div>
+        </article>
+
+        <article class="panel stage-card stage-wide" data-stage="proof">
+          <header>
+            <span class="stage-number">06</span>
+            <div><span class="step-kicker">Audit view</span><h2>Event trail</h2></div>
+            <span id="proofState" class="state">Waiting</span>
+          </header>
+          <div id="eventTrail" class="event-trail muted">Events will appear here as the flow advances.</div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <span>Isolated Build Week implementation · no production Margelis systems connected</span>
+      <span>Local demo signer · self-asserted reviewer identity</span>
+    </footer>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
+
