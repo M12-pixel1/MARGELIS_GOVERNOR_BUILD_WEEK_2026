@@ -56,5 +56,5 @@ All code, interface, tests, API integration, evidence signing, Exam Runner, and 
 
 Repository setup and local verification commands are in `README.md`.
 
-Hosted URL: **pending deployment**
+Hosted URL: **https://margelis-governor-build-week-2026.onrender.com/**
 
