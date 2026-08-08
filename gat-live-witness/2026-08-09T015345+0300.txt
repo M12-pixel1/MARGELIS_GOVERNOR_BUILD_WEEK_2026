@@ -1,0 +1,8 @@
+GLOBAL AI TRUST LIVE EXTERNAL WITNESS
+purpose=controlled external action/readback test
+run_nonce=e81e634b-774a-4883-8247-c156156cfd14
+created_local=2026-08-09T01:53:45+03:00
+expected_branch=gat-live-witness-20260809-0152
+claim=This marker must be created by the connected GitHub account and then independently read back from GitHub before it can be counted as CONNECTED_ACCOUNT_READBACK evidence.
+not_provider_native=true
+margelis_verified=false
